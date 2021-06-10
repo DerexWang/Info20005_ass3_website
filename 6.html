@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>6</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <!--top-->
+    <div class="top">
+        <div class="top-c">
+            <a href="#">
+                <img src="img/icon01.png" alt="">
+                Find Our Stores
+            </a>
+            <a href="4.html">
+                <img src="img/icon02.png" alt="">
+                Cart (0)
+            </a>
+            <a href="8.html">
+                <img src="img/icon03.png" alt="">
+                Account
+            </a>
+        </div>
+    </div>
+    <!--header-->
+    <header>
+        <div class="header">
+            <div class="logo-top brown">
+                Modren accent furniture
+            </div>
+            <div class="logo brown">
+                Johnny's Furniture
+            </div>
+            <div class="logo-desc brown">Love your home.</div>
+            <div class="shoplink brown">
+                <a href="6.html">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="search">
+                <button type="button" class="search-btn" onClick="window.location.href='7.html'"><img src="img/search-btn.png" alt=""></button>
+                <input type="text" class="search-txt" value="" placeholder="Search">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="6.html">SOFAS</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">LIVING & DINNING</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">BEDROOM</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">COLLECTION</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">ABOUT JOHNNY'S</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">MORE</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--Banner-->
+        <div class="banner"><img src="img/banner.png" alt=""></div>
+    </header>
+    <div class="space"></div>
+    <!--sort name-->
+    <div class="sort">
+        <div class="sort-c">SOFAS</div>
+    </div>
+    <!--main-->
+    <div class="main small-main">
+        <!--list top option-->
+        <div class="list-top">
+            <div class="list-top-item">
+                View As
+                <a href="#"><img src="img/icon05.png" alt=""></a>
+                <a href="#"><img src="img/icon06.png" alt=""></a>
+            </div>
+            <div class="list-top-item">60 Products</div>
+            <div class="list-top-item">
+                BEST SELLING
+                <div class="list-top-drop">
+                    <div class="drop-main">
+                    <a href="#">BEST SELLING</a>
+                    <a href="#">HOT SELLING</a>
+                    <a href="#">RECOMMEND SELLING</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <!--list left option-->
+            <div class="list-left">
+                <div class="list-left-t" @click="toggle($event)">Room</div>
+                <div class="list-left-c">
+                    <a href="#" class="list-left-item"><em>(40)</em>LIVING ROOM</a>
+                </div>
+                <div class="list-left-t" @click="toggle($event)">Price</div>
+                <div class="list-left-c">
+                    <div class="list-price">
+                        <div class="list-pice-item"><input type="text" v-model="min"></div>
+                        <div class="list-pice-item">-</div>
+                        <div class="list-pice-item"><input type="text" v-model="max"></div>
+                    </div>
+                    <div class="list-price-line">
+                        <em></em><em></em><em></em><em></em>
+                        <i class="min"></i>
+                        <i class="max"></i>
+                    </div>
+                    <div class="list-price-num">
+                        <span>249</span>
+                        <span>1087</span>
+                        <span>1924</span>
+                        <span>2762</span>
+                        <span>3599</span>
+                    </div>
+                </div>
+                <div class="list-left-t" @click="toggle($event)">Size</div>
+                <div class="list-left-c">
+                    <a href="#" class="list-left-item"><em>(9)</em>MODULAR</a>
+                    <a href="#" class="list-left-item"><em>(3)</em>CORNER SOFA</a>
+                    <a href="#" class="list-left-item"><em>(17)</em>CHAISE</a>
+                    <a href="#" class="list-left-item"><em>(6)</em>3 SEATER</a>
+                    <a href="#" class="list-left-item"><em>(5)</em>2 SEATER</a>
+                    <a href="#" class="list-left-item"><em>(4)</em>ARMCHAIR</a>
+                </div>
+                <div class="list-left-t" @click="toggle($event)">Material</div>
+                <div class="list-left-c">
+                    <a href="#" class="list-left-item"><em>(1)</em>LEATHER</a>
+                    <a href="#" class="list-left-item"><em>(5)</em>FABRIC</a>
+                    <a href="#" class="list-left-item"><em>(2)</em>RHINO SUEDE</a>
+                </div>
+                <div class="list-left-t" @click="toggle($event)">Features</div>
+                <div class="list-left-c">
+                    <a href="#" class="list-left-item"><em>(2)</em>RECLINER</a>
+                    <a href="#" class="list-left-item"><em>(6)</em>CHAIR</a>
+                    <a href="#" class="list-left-item"><em>(2)</em>CUP HOLDER</a>
+                </div>
+                <div class="list-left-t" @click="toggle($event)">Style</div>
+                <div class="list-left-c">
+                    <a href="#" class="list-left-item"><em>(6)</em>CONTEMPORAY LIVING</a>
+                    <a href="#" class="list-left-item"><em>(3)</em>MODERN</a>
+                    <a href="#" class="list-left-item"><em>(1)</em>TRADITIONAL</a>
+                </div>
+            </div>
+            <!--list right-->
+            <div class="list-right">
+                <ul class="list-style1">
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Davenport Sectional - Build You Own</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$449<span>$449</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">BOSTON LARGE PACKAGE</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$1,259<span>$1,799</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Emma - Chaise Corner Lounge</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$3,599<span>$3,999</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Davenport - Chaise Lounge</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$1,979<span>$2,199</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">BOSTON LARGE PACKAGE</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$599<span>$1,199</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list6.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - 2 Seater</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$849<span>$1,699</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list7.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - 2 Seater</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$1,529<span>$1,699</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list8.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - 3 Seater</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$1,095<span>$2,190</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list9.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - Ottoman</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$499<span>$499</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list10.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - 3 Seater</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$1,971<span>$2,199</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list11.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - Armchair</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$1,079<span>$1,199</span></div>
+                    </li>
+                    <li>
+                        <div class="list-img">
+                            <a href="3.html">
+                                <em>SALE</em>
+                                <img src="img/list12.png" alt="">
+                            </a>
+                        </div>
+                        <div class="list-title"><a href="3.html">Mayfair - Ottoman</a></div>
+                        <div class="list-sort"><a href="3.html">SOFA</a></div>
+                        <div class="list-price">$249<span>$499</span></div>
+                    </li>
+                </ul>
+                <div class="page">
+                    <ul>
+                        <li>
+                            <a href="#">&#xf104;</a>
+                        </li>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">&#xf105;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">ABOUT US</div>
+                    <p>15 Stores Australia wide </p>
+                    <p>Sourcing the latest and trendiest styles</p>
+                    <p>Friendly Team</p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">INFORMATION</div>
+                    <p><a href="#">Store Locations</a></p>
+                    <p><a href="#">Guides</a></p>
+                    <p><a href="#">Contact Us</a></p>
+                    <p><a href="#">Click and Collect Info</a></p>
+                    <p><a href="#">Delivery Info</a></p>
+                    <p><a href="#">Payment Options</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CUSTOMER CARE</div>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Warranty and Returns</a></p>
+                    <p><a href="#">FAQ's</a></p>
+                    <p><a href="#">Warranty Products</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CONNECT WITH US</div>
+                    <p>Signup for our newsletter to stay up to date on sales and events.</p>
+                    <div class="mail">
+                        <input type="text" class="mail-txt" placeholder="Join our mailing list">
+                        <button type="button" class="mail-btn"></button>
+                    </div>
+                    <p><a href="#"><img src="img/icon04.png" alt=""></a></p>
+                </div>
+            </div>
+            <div class="paylink">
+                <a href="#"><img src="img/footer-icon01.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon02.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon03.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon04.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon05.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon06.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon07.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon08.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon09.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon10.png" alt=""></a>
+            </div>
+            <div class="copyright">© 2021 Johnny's Furniture . Built by The Hope Factory</div>
+        </div>
+    </footer>
+</div>
+<script>
+new Vue({
+    data: function() {
+        return {
+            min: 249,
+            max: 3599,
+        }
+    },
+    methods: {
+        toggle: function(e) {
+            console.log(e.currentTarget.nextElementSibling.clientHeight)
+            e.currentTarget.nextElementSibling.clientHeight != 0 ? e.currentTarget.nextElementSibling.style.maxHeight = '0px' : e.currentTarget.nextElementSibling.style.maxHeight = '1000px'
+        }
+    }
+}).$mount('#app');
+</script>
+</body>
+</html>

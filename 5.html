@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>5</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <!--top-->
+    <div class="top">
+        <div class="top-c">
+            <a href="#">
+                <img src="img/icon01.png" alt="">
+                Find Our Stores
+            </a>
+            <a href="4.html">
+                <img src="img/icon02.png" alt="">
+                Cart (0)
+            </a>
+            <a href="8.html">
+                <img src="img/icon03.png" alt="">
+                Account
+            </a>
+        </div>
+    </div>
+    <!--header-->
+    <header>
+        <div class="header-bottom">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="6.html">SOFAS</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">LIVING & DINNING</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">BEDROOM</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">COLLECTION</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">ABOUT JOHNNY'S</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">MORE</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--banner-->
+        <div class="banner"></div>
+    </header>
+    <!--main-->
+    <div class="space"></div>
+    <div class="main small-main">
+        <!--message form-->
+        <div class="product-content form">
+            <div class="product-content-txt">
+                <p style="font-size: 20px; color: #403b58;"><b><span style="color: red;">*</span> Contact Email</b></p>
+                <div class="form-line">
+                    <div class="form-line-item"><input type="text" placeholder="Email"></div>
+                </div>
+                <br><br>
+                <p style="font-size: 20px; color: #403b58;"><b><span style="color: red;">*</span> Shopping Detail</b></p>
+                <div class="form-line">
+                    <div class="form-line-item"><input type="text" placeholder="First Name"></div>
+                    <div class="form-line-item"><input type="text" placeholder="Last Name"></div>
+                </div>
+                <div class="form-line">
+                    <div class="form-line-item">
+                        <select name="" id="">
+                            <option value="" disabled selected>Address line1</option>
+                        </select>
+                    </div>
+                    <div class="form-line-item">
+                        <select name="" id="">
+                            <option value="" disabled selected>Address line2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-line">
+                    <div class="form-line-item">
+                        <select name="" id="">
+                            <option value="" disabled selected>City</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-line">
+                    <div class="form-line-item" style="border: none; background-color: transparent;">
+                        <a href="#" class="shopping">Continue Shopping</a>
+                    </div>
+                    <div class="form-line-item">
+                        <a href="#" class="confirm">CONFIRM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-main">
+            <!--product order img-->
+            <div class="prodcut-order-img"><img src="img/album1.png" alt=""></div>
+            <!--product order info-->
+            <div class="product-info order-info">
+                <div class="product-title">Davenport - Chaise Lounge</div>
+                <div class="product-price">$1,979 <span>$2,199</span></div>
+                <div class="product-moreinfo">15 ARMLESS　　　　Gray</div>
+                <div class="product-count-num">
+                    <div class="opt" @click="opt('cut')">-</div>
+                    <div class="num">{{ num }}</div>
+                    <div class="opt" @click="opt('add')">+</div>
+                    <div class="order-del"><a href="#"><img src="img/del.png" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+        <!--order check out-->
+        <div class="order-check" style="text-align: center;">
+            <a href="#">CHECK OUT</a>
+        </div>
+        <!--product like-->
+        <div class="product-like-tile">YOU MAY ALSO LIKE</div>
+        <div class="product-like-list">
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like1.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Davenport Sectional - Build You Own</a></div>
+                <div class="product-like-price">$499</div>
+            </div>
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like2.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Chamberlain - Tv Unit</a></div>
+                <div class="product-like-price">$809</div>
+            </div>
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like3.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Rope - Dining Chair</a></div>
+                <div class="product-like-price">$139</div>
+            </div>
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like4.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Davenport - Corner lounge</a></div>
+                <div class="product-like-price">$2449</div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">ABOUT US</div>
+                    <p>15 Stores Australia wide </p>
+                    <p>Sourcing the latest and trendiest styles</p>
+                    <p>Friendly Team</p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">INFORMATION</div>
+                    <p><a href="#">Store Locations</a></p>
+                    <p><a href="#">Guides</a></p>
+                    <p><a href="#">Contact Us</a></p>
+                    <p><a href="#">Click and Collect Info</a></p>
+                    <p><a href="#">Delivery Info</a></p>
+                    <p><a href="#">Payment Options</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CUSTOMER CARE</div>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Warranty and Returns</a></p>
+                    <p><a href="#">FAQ's</a></p>
+                    <p><a href="#">Warranty Products</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CONNECT WITH US</div>
+                    <p>Signup for our newsletter to stay up to date on sales and events.</p>
+                    <div class="mail">
+                        <input type="text" class="mail-txt" placeholder="Join our mailing list">
+                        <button type="button" class="mail-btn"></button>
+                    </div>
+                    <p><a href="#"><img src="img/icon04.png" alt=""></a></p>
+                </div>
+            </div>
+            <div class="paylink">
+                <a href="#"><img src="img/footer-icon01.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon02.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon03.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon04.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon05.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon06.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon07.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon08.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon09.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon10.png" alt=""></a>
+            </div>
+            <div class="copyright">© 2021 Johnny's Furniture . Built by The Hope Factory</div>
+        </div>
+    </footer>
+</div>
+<script>
+new Vue({
+    data: function() {
+        return {
+            num: 0, // count num
+        }
+    },
+    methods: {
+        opt: function(o) {
+            o == 'cut' && this.num --
+            o == 'add' && this.num ++
+            this.num < 0 ? this.num = 0 : ''
+        }
+    }
+}).$mount('#app');
+</script>
+</body>
+</html>

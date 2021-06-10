@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>3</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <!--top-->
+    <div class="top">
+        <div class="top-c">
+            <a href="#">
+                <img src="img/icon01.png" alt="">
+                Find Our Stores
+            </a>
+            <a href="4.html">
+                <img src="img/icon02.png" alt="">
+                Cart (0)
+            </a>
+            <a href="8.html">
+                <img src="img/icon03.png" alt="">
+                Account
+            </a>
+        </div>
+    </div>
+    <!--header-->
+    <header>
+        <div class="header">
+            <div class="logo-top brown">
+                Modren accent furniture
+            </div>
+            <div class="logo brown">
+                Johnny's Furniture
+            </div>
+            <div class="logo-desc brown">Love your home.</div>
+            <div class="shoplink brown">
+                <a href="6.html">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="6.html">SOFAS</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">LIVING & DINNING</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">BEDROOM</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">COLLECTION</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">ABOUT JOHNNY'S</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">MORE</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--Banner-->
+        <div class="banner"><img src="img/banner.png" alt=""></div>
+    </header>
+    <!--main-->
+    <div class="space"></div>
+    <div class="main small-main">
+        <div class="product-main">
+            <!--product albums-->
+            <div class="product-album">
+                <div class="product-album-big">
+                    <div class="product-album-arrow"></div>
+                    <img :src="imgsrc ? imgsrc : 'img/album1.png' " alt="">
+                </div>
+                <div class="procduct-album-list">
+                    <ul>
+                        <li @click="imgsrc ='img/album1.png'"><img src="img/album1.png" alt=""></li>
+                        <li @click="imgsrc ='img/album2.png'"><img src="img/album2.png" alt=""></li>
+                        <li @click="imgsrc ='img/album3.png'"><img src="img/album3.png" alt=""></li>
+                        <li @click="imgsrc ='img/album4.png'"><img src="img/album4.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <!--product info-->
+            <div class="product-info">
+                <div class="product-title">Davenport - Chaise Lounge</div>
+                <div class="product-price">$1,979 <span>$2,199</span></div>
+                <div class="product-moreinfo">or make 4 interest-free payments of $494.75</div>
+                <div class="product-moreinfo">AUD fortnightly width <span>Afterpay</span> <a href="#">More info.</a></div>
+                <div class="product-params-title">Size</div>
+                <div class="product-params-list">
+                    <span :class="{ 'active': sizeIndex == 0 }" @click="sizeIndex = 0">15 ARMLESS</span>
+                    <span :class="{ 'active': sizeIndex == 1 }" @click="sizeIndex = 1">25 ARMLESS</span>
+                </div>
+                <div class="product-params-title">Color</div>
+                <div class="product-params-list params-color">
+                    <span :class="{ 'active': colorIndex == 0 }" @click="colorIndex = 0" style="background-color: #c9caca;"></span>
+                    <span :class="{ 'active': colorIndex == 1 }" @click="colorIndex = 1" style="background-color: #9186c9;"></span>
+                    <span :class="{ 'active': colorIndex == 2 }" @click="colorIndex = 2" style="background-color: #dbd2c3;"></span>
+                </div>
+                <div class="product-count-num">
+                    <div class="opt" @click="opt('cut')">-</div>
+                    <div class="num">{{ num }}</div>
+                    <div class="opt" @click="opt('add')">+</div>
+                </div>
+                <div class="product-cart" :class="{ 'carted': carted }" @click="carted = true">
+                    <em>
+                        <i>1</i>
+                        <i v-if="!carted"><img src="img/cart.png" alt=""></i>
+                        <i v-if="carted"><img src="img/carted.png" alt=""></i>
+                    </em>
+                    Add to cart
+                </div>
+                <div class="product-order" onClick="window.location.href='4.html'">ORDER NOW</div>
+            </div>
+        </div>
+        <!--product content-->
+        <div class="product-content">
+            <div class="product-content-tab">
+                <span :class="{ 'active': tab == 0 }" @click="tab = 0">Description</span>
+                <span :class="{ 'active': tab == 1 }" @click="tab = 1">Delivery Calculator</span>
+                <span :class="{ 'active': tab == 2 }" @click="tab = 2">Delivery / Click and Collect</span>
+            </div>
+            <div class="product-content-txt" v-if="tab == 0">
+                <p style="text-decoration: underline; font-size: 26px;"><b>Product Description</b></p>
+                <p style="color: #666;">An elegant dining chair with unmatched comfort, the Victoria dining chair is an ideal option for hamptons styled homes. Unlike other dining chairs the Victoria dining chair is  padded for comfort and is perfect for those long sitting dinner parties. </p>
+                <br>
+                <p style="text-decoration: underline; font-size: 26px;"><b>Features</b></p>
+                <p style="color: #666;">Timber Legs</p>
+                <p style="color: #666;">Button tuffed detailing</p>
+                <p style="color: #666;">Linen Fabric</p>
+                <br>
+                <p style="text-decoration: underline; font-size: 26px;"><b>Dimensions</b></p>
+                <p style="color: #666;">Width - 62 cm</p>
+                <p style="color: #666;">Depth - 68 cm</p>
+                <p style="color: #666;">Height - 96 cm</p>
+            </div>
+            <div class="product-content-txt" v-if="tab == 1">
+                <p style="text-decoration: underline; font-size: 26px;"><b>Delivery Calculator</b></p>
+            </div>
+            <div class="product-content-txt" v-if="tab == 2">
+                <p style="text-decoration: underline; font-size: 26px;"><b>Delivery / Click and Collect</b></p>
+            </div>
+        </div>
+        <!--product like-->
+        <div class="product-like-tile">YOU MAY ALSO LIKE</div>
+        <div class="product-like-list">
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like1.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Davenport Sectional - Build You Own</a></div>
+                <div class="product-like-price">$499</div>
+            </div>
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like2.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Chamberlain - Tv Unit</a></div>
+                <div class="product-like-price">$809</div>
+            </div>
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like3.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Rope - Dining Chair</a></div>
+                <div class="product-like-price">$139</div>
+            </div>
+            <div class="product-like-item">
+                <div class="product-like-img"><a href="#"><img src="img/like4.png" alt=""></a></div>
+                <div class="product-like-name"><a href="#">Davenport - Corner lounge</a></div>
+                <div class="product-like-price">$2449</div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">ABOUT US</div>
+                    <p>15 Stores Australia wide </p>
+                    <p>Sourcing the latest and trendiest styles</p>
+                    <p>Friendly Team</p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">INFORMATION</div>
+                    <p><a href="#">Store Locations</a></p>
+                    <p><a href="#">Guides</a></p>
+                    <p><a href="#">Contact Us</a></p>
+                    <p><a href="#">Click and Collect Info</a></p>
+                    <p><a href="#">Delivery Info</a></p>
+                    <p><a href="#">Payment Options</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CUSTOMER CARE</div>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Warranty and Returns</a></p>
+                    <p><a href="#">FAQ's</a></p>
+                    <p><a href="#">Warranty Products</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CONNECT WITH US</div>
+                    <p>Signup for our newsletter to stay up to date on sales and events.</p>
+                    <div class="mail">
+                        <input type="text" class="mail-txt" placeholder="Join our mailing list">
+                        <button type="button" class="mail-btn"></button>
+                    </div>
+                    <p><a href="#"><img src="img/icon04.png" alt=""></a></p>
+                </div>
+            </div>
+            <div class="paylink">
+                <a href="#"><img src="img/footer-icon01.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon02.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon03.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon04.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon05.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon06.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon07.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon08.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon09.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon10.png" alt=""></a>
+            </div>
+            <div class="copyright">© 2021 Johnny's Furniture . Built by The Hope Factory</div>
+        </div>
+    </footer>
+</div>
+<script>
+new Vue({
+    data: function() {
+        return {
+            imgsrc: '', //big img's src
+            sizeIndex: 0, //select size index
+            colorIndex: 0, //select color index
+            num: 0, // count num
+            carted: false, //to cart status
+            tab: 0 //product content tab index
+        }
+    },
+    methods: {
+        opt: function(o) {
+            o == 'cut' && this.num -- //cut down
+            o == 'add' && this.num ++ //add
+            this.num < 0 ? this.num = 0 : ''
+        }
+    }
+}).$mount('#app');
+</script>
+</body>
+</html>

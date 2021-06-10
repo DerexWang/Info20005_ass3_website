@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>1</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+    <!--top-->
+    <div class="top">
+        <div class="top-c">
+            <a href="#">
+                <img src="img/icon01.png" alt="">
+                Find Our Stores
+            </a>
+            <a href="4.html">
+                <img src="img/icon02.png" alt="">
+                Cart (0)
+            </a>
+            <a href="8.html">
+                <img src="img/icon03.png" alt="">
+                Account
+            </a>
+        </div>
+    </div>
+    <!--header-->
+    <header>
+        <div class="header">
+            <div class="logo-top">
+                Modren accent furniture
+            </div>
+            <div class="logo">
+                Johnny's Furniture
+            </div>
+            <div class="logo-desc">Love your home.</div>
+            <div class="shoplink">
+                <a href="6.html">SHOP NOW</a>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="search">
+                <button type="button" class="search-btn" onClick="window.location.href='7.html'"><img src="img/search-btn.png" alt=""></button>
+                <input type="text" class="search-txt" value="" placeholder="Search">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="6.html">SOFAS</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                                <a href="6.html">SOFAS</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">LIVING & DINNING</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                                <a href="6.html">LIVING & DINNING</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">BEDROOM</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                                <a href="6.html">BEDROOM</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">COLLECTION</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                                <a href="6.html">COLLECTION</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">ABOUT JOHNNY'S</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                                <a href="6.html">ABOUT JOHNNY'S</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="6.html">MORE</a>
+                        <div class="drop">
+                            <div class="drop-main">
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                                <a href="6.html">MORE</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--Carousel-->
+        <div class="carousel" ref="carousel">
+                <div class="carousel-main" :style="'transform: translateY(' + -(carousel.y + 1) * 100 + '%); transition: ' + carousel.transition +';'">
+                    <div class="carousel-item"><img src="img/carousel.png" alt=""></div>
+                    <div class="carousel-item"><img src="img/carousel.png" alt=""></div>
+                    <div class="carousel-item"><img src="img/carousel.png" alt=""></div>
+                    <div class="carousel-item"><img src="img/carousel.png" alt=""></div>
+                    <div class="carousel-item"><img src="img/carousel.png" alt=""></div>
+                </div>
+                <div class="carousel-bar">
+                    <div class="carousel-up" @click="carouselOpt('up')"><img src="img/carousel-arrow.png" alt=""></div>
+                    <div class="carousel-down" @click="carouselOpt('down')"><img src="img/carousel-arrow.png" alt=""></div>
+                    <div class="carousel-indicator">
+                        <em v-for="item in carousel.num" :key="item" :class="{ 'active': item == carousel.index + 1 }" @click="carouselInd(item)"></em>
+                    </div>
+                </div>
+        </div>
+    </header>
+    <!--main-->
+    <div class="space"></div>
+    <div class="graybg">
+    <div class="main">
+        <!--new product-->
+        <div class="title">NEW PRODUCTS</div>
+        <div class="title-desc">Love your home.</div>
+        <div class="product">
+            <div class="product-left" @click="productOpt('left')"></div>
+            <div class="product-middle" ref="product">
+                <ul :style="'transform: translateX(' + -(product.x + 1) * 590 + 'px); transition: ' + product.transition + ';'">
+                    <li>
+                        <div class="product-img">
+                            <div class="product-new">
+                                NEW
+                                <span>10%</span>
+                            </div>
+                            <img src="img/p1.png" alt="">
+                        </div>
+                        <div class="product-title">Victoria - Dining Chair</div>
+                        <div class="product-original"><span>$299</span></div>
+                        <div class="product-present"><span>$206</span></div>
+                        <div class="product-shop"><a href="#">SHOP NOW</a></div>
+                    </li>
+                    <li>
+                        <div class="product-img">
+                            <div class="product-new">
+                                NEW
+                                <span>10%</span>
+                            </div>
+                            <img src="img/p2.png" alt="">
+                        </div>
+                        <div class="product-title">Chamberlain - Dining Chair</div>
+                        <div class="product-original"><span>$199</span></div>
+                        <div class="product-present"><span>$179</span></div>
+                        <div class="product-shop"><a href="#">SHOP NOW</a></div>
+                    </li>
+                    <li>
+                        <div class="product-img">
+                            <div class="product-new">
+                                NEW
+                                <span>10%</span>
+                            </div>
+                            <img src="img/p1.png" alt="">
+                        </div>
+                        <div class="product-title">Victoria - Dining Chair</div>
+                        <div class="product-original"><span>$299</span></div>
+                        <div class="product-present"><span>$206</span></div>
+                        <div class="product-shop"><a href="#">SHOP NOW</a></div>
+                    </li>
+                    <li>
+                        <div class="product-img">
+                            <div class="product-new">
+                                NEW
+                                <span>10%</span>
+                            </div>
+                            <img src="img/p2.png" alt="">
+                        </div>
+                        <div class="product-title">Chamberlain - Dining Chair</div>
+                        <div class="product-original"><span>$199</span></div>
+                        <div class="product-present"><span>$179</span></div>
+                        <div class="product-shop"><a href="#">SHOP NOW</a></div>
+                    </li>
+                    <li>
+                        <div class="product-img">
+                            <div class="product-new">
+                                NEW
+                                <span>10%</span>
+                            </div>
+                            <img src="img/p1.png" alt="">
+                        </div>
+                        <div class="product-title">Victoria - Dining Chair</div>
+                        <div class="product-original"><span>$299</span></div>
+                        <div class="product-present"><span>$206</span></div>
+                        <div class="product-shop"><a href="#">SHOP NOW</a></div>
+                    </li>
+                    <li>
+                        <div class="product-img">
+                            <div class="product-new">
+                                NEW
+                                <span>10%</span>
+                            </div>
+                            <img src="img/p2.png" alt="">
+                        </div>
+                        <div class="product-title">Chamberlain - Dining Chair</div>
+                        <div class="product-original"><span>$199</span></div>
+                        <div class="product-present"><span>$179</span></div>
+                        <div class="product-shop"><a href="#">SHOP NOW</a></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="product-right" @click="productOpt('right')"></div>
+        </div>
+    </div>
+    </div>
+    <div class="main">
+    <!--case-->
+        <div class="case" ref="case">
+            <ul :style="'transform: translateX(' + -(cases.x + 1) * 100 + '%); transition: ' + cases.transition + ';'">
+                <li>
+                    <div class="case-info">
+                        <div class="case-title">
+                            OLSBERG ARMCHAIR
+                        </div>
+                        <div class="case-desc">
+                            Seamlessly merging classic elements with modern trends
+                        </div>
+                        <div class="case-param">
+                            <p>Width - 112 cm</p>
+                            <p>Depth - 97 cm</p>
+                            <p>Height - 97 cm</p>
+                        </div>
+                    </div>
+                    <div class="case-shop">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                    <img src="img/case.png" alt="">
+                </li>
+                <li>
+                    <div class="case-info">
+                        <div class="case-title">
+                            OLSBERG ARMCHAIR
+                        </div>
+                        <div class="case-desc">
+                            Seamlessly merging classic elements with modern trends
+                        </div>
+                        <div class="case-param">
+                            <p>Width - 112 cm</p>
+                            <p>Depth - 97 cm</p>
+                            <p>Height - 97 cm</p>
+                        </div>
+                    </div>
+                    <div class="case-shop">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                    <img src="img/case.png" alt="">
+                </li>
+                <li>
+                    <div class="case-info">
+                        <div class="case-title">
+                            OLSBERG ARMCHAIR
+                        </div>
+                        <div class="case-desc">
+                            Seamlessly merging classic elements with modern trends
+                        </div>
+                        <div class="case-param">
+                            <p>Width - 112 cm</p>
+                            <p>Depth - 97 cm</p>
+                            <p>Height - 97 cm</p>
+                        </div>
+                    </div>
+                    <div class="case-shop">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                    <img src="img/case.png" alt="">
+                </li>
+                <li>
+                    <div class="case-info">
+                        <div class="case-title">
+                            OLSBERG ARMCHAIR
+                        </div>
+                        <div class="case-desc">
+                            Seamlessly merging classic elements with modern trends
+                        </div>
+                        <div class="case-param">
+                            <p>Width - 112 cm</p>
+                            <p>Depth - 97 cm</p>
+                            <p>Height - 97 cm</p>
+                        </div>
+                    </div>
+                    <div class="case-shop">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                    <img src="img/case.png" alt="">
+                </li>
+                <li>
+                    <div class="case-info">
+                        <div class="case-title">
+                            OLSBERG ARMCHAIR
+                        </div>
+                        <div class="case-desc">
+                            Seamlessly merging classic elements with modern trends
+                        </div>
+                        <div class="case-param">
+                            <p>Width - 112 cm</p>
+                            <p>Depth - 97 cm</p>
+                            <p>Height - 97 cm</p>
+                        </div>
+                    </div>
+                    <div class="case-shop">
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                    <img src="img/case.png" alt="">
+                </li>
+            </ul>
+            <div class="case-indicator">
+                <em v-for="item in cases.num" :key="item" :class="{ 'active': item == cases.index + 1 }" @click="caseInd(item)"></em>
+            </div>
+        </div>
+    </div>
+    <!--class-->
+    <div class="classbg">
+        <div class="class">
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class01.png" alt=""></div>
+                    <span>STORAGE</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class02.png" alt=""></div>
+                    <span>CHAIR</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class03.png" alt=""></div>
+                    <span>DRAWER</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class04.png" alt=""></div>
+                    <span>SOFA</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class05.png" alt=""></div>
+                    <span>TABLE</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class06.png" alt=""></div>
+                    <span>BED</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class07.png" alt=""></div>
+                    <span>SINGLE SOFA</span>
+                </a>
+            </div>
+            <div class="class-item">
+                <a href="#">
+                    <div class="class-icon"><img src="img/class08.png" alt=""></div>
+                    <span>LIGHT</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">ABOUT US</div>
+                    <p>15 Stores Australia wide </p>
+                    <p>Sourcing the latest and trendiest styles</p>
+                    <p>Friendly Team</p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">INFORMATION</div>
+                    <p><a href="#">Store Locations</a></p>
+                    <p><a href="#">Guides</a></p>
+                    <p><a href="#">Contact Us</a></p>
+                    <p><a href="#">Click and Collect Info</a></p>
+                    <p><a href="#">Delivery Info</a></p>
+                    <p><a href="#">Payment Options</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CUSTOMER CARE</div>
+                    <p><a href="#">Privacy Policy</a></p>
+                    <p><a href="#">Warranty and Returns</a></p>
+                    <p><a href="#">FAQ's</a></p>
+                    <p><a href="#">Warranty Products</a></p>
+                </div>
+                <div class="footer-nav-item">
+                    <div class="footer-nav-t">CONNECT WITH US</div>
+                    <p>Signup for our newsletter to stay up to date on sales and events.</p>
+                    <div class="mail">
+                        <input type="text" class="mail-txt" placeholder="Join our mailing list">
+                        <button type="button" class="mail-btn"></button>
+                    </div>
+                    <p><a href="#"><img src="img/icon04.png" alt=""></a></p>
+                </div>
+            </div>
+            <div class="paylink">
+                <a href="#"><img src="img/footer-icon01.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon02.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon03.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon04.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon05.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon06.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon07.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon08.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon09.png" alt=""></a>
+                <a href="#"><img src="img/footer-icon10.png" alt=""></a>
+            </div>
+            <div class="copyright">© 2021 Johnny's Furniture . Built by The Hope Factory</div>
+        </div>
+    </footer>
+    <!--tel-->
+    <div class="tel" ref="tel"><a href="tel:123456789"></a></div>
+    <!--recommend-->
+    <div class="recommend" ref="recommend">
+        <div class="recommend-title">
+            BEST SOFA
+            <i @click="close()"></i>
+        </div>
+        <div class="recommend-img">
+            <div class="recommend-sale">
+                SALE
+                <span>20%</span>
+            </div>
+            <img src="img/recommend.png" alt="">
+        </div>
+        <div class="recommend-name">Victoria - Seater Sofa</div>
+        <div class="recommend-preice"><span>$1,200</span>$900</div>
+        <div class="recommend-add"><a href="#">ADD TO CART</a></div>
+    </div>
+</div>
+<script>
+new Vue({
+    data: function() {
+        return {
+            carousel: { //carousel data
+                index: 0,
+                num: 0,
+                active: false,
+                y: 0,
+                transition: 'all 0.5s'
+            },
+            product: { //product data
+                index: 0,
+                num: 0,
+                active: false,
+                x: 0,
+                transition: 'all 0.5s'
+            },
+            cases: { //case data
+                index: 0,
+                num: 0,
+                active: false,
+                x: 0,
+                transition: 'all 0.5s'
+            }
+        }
+    },
+    methods: {
+        //carousel
+        carouselInit: function() {
+            this.carousel.transition = 'all 0s'
+            this.carousel.num = this.$refs['carousel'].querySelectorAll('.carousel-item').length
+            this.$refs['carousel'].style.height = this.$refs['carousel'].querySelector('img').clientHeight + 'px'
+            var _this = this
+            window.addEventListener('resize', function() {
+                _this.$refs['carousel'].style.height = _this.$refs['carousel'].querySelector('img').clientHeight + 'px'
+            })
+            var first = this.$refs['carousel'].children[0].firstChild.cloneNode(true) // copy node
+            var last = this.$refs['carousel'].children[0].lastChild.cloneNode(true) // copy node
+            this.$refs['carousel'].children[0].append(first) //insert node
+            this.$refs['carousel'].children[0].prepend(last) //insert node
+            setInterval(function() { //auto scroll down
+                _this.carouselOpt('down')
+            }, 5000)
+        },
+        carouselOpt: function(o) { //carousel option
+            this.carousel.transition = 'all 0.5s'
+            var _this = this
+            if(!this.carousel.active){
+                this.carousel.active = true
+                if(o == 'up') {
+                    this.carousel.index -- 
+                    this.carousel.y = this.carousel.index
+                    if(this.carousel.index + 1 == 0) {
+                        this.carousel.index = this.carousel.num - 1
+                        setTimeout(function() {
+                            _this.carousel.transition = 'all 0s'
+                            _this.carousel.y = _this.carousel.index
+                            _this.carousel.active = false
+                        }, 500)
+                    }
+                }
+                if(o == 'down') {
+                    this.carousel.index ++
+                    this.carousel.y = this.carousel.index
+                    if(this.carousel.index == this.carousel.num) {
+                        this.carousel.index = 0
+                        setTimeout(function() {
+                            _this.carousel.transition = 'all 0s'
+                            _this.carousel.y = _this.carousel.index
+                            _this.carousel.active = false
+                        }, 500)
+                    }
+                }
+            }
+            this.$refs['carousel'].children[0].addEventListener('transitionend', function() {
+                _this.carousel.active = false
+            })
+        },
+        carouselInd: function(i) { //carousel indicator
+            this.carousel.transition = 'all 0.5s'
+            this.carousel.index = i - 1
+            this.carousel.y = this.carousel.index
+        },
+        //product
+        productInit: function() {
+            this.product.transition = 'all 0s'
+            this.product.num = this.$refs['product'].children[0].children.length
+            var first = this.$refs['product'].children[0].firstChild.cloneNode(true)
+            var second = this.$refs['product'].children[0].children[1].cloneNode(true)
+            var last = this.$refs['product'].children[0].lastChild.cloneNode(true)
+            this.$refs['product'].children[0].append(first)
+            this.$refs['product'].children[0].append(second)
+            this.$refs['product'].children[0].prepend(last)
+            var _this = this
+            setInterval(() => {
+                _this.productOpt('right')
+            }, 5000);
+        },
+        productOpt: function(o) { //product option
+            this.product.transition = 'all 0.5s'
+            var _this = this
+            if(!this.product.active) {
+                this.product.active = true
+                if(o == 'left') {
+                    this.product.index --
+                    this.product.x = this.product.index
+                    if(this.product.index + 1 == 0) {
+                        this.product.index = this.product.num - 1
+                        setTimeout(() => {
+                            _this.product.transition = 'all 0s'
+                            _this.product.x = _this.product.index
+                            _this.product.active = false
+                        }, 500)
+                    }
+                }
+                if(o == 'right') {
+                    this.product.index ++
+                    this.product.x = this.product.index
+                    if(this.product.index == this.product.num) {
+                        this.product.index = 0
+                        setTimeout(function() {
+                            _this.product.transition = 'all 0s'
+                            _this.product.x = _this.product.index
+                            _this.product.active = false
+                        }, 500)
+                    }
+                }
+            }
+            this.$refs['product'].children[0].addEventListener('transitionend', function() {
+                _this.product.active = false
+            })
+        },
+        //case
+        caseInit: function() {
+            this.cases.transition = 'all 0s'
+            this.cases.num = this.$refs['case'].children[0].children.length
+            var first = this.$refs['case'].children[0].firstChild.cloneNode(true) // copy node
+            var last = this.$refs['case'].children[0].lastChild.cloneNode(true) // copy node
+            this.$refs['case'].children[0].append(first) //insert node
+            this.$refs['case'].children[0].prepend(last) //insert node
+            var _this = this
+            setInterval(function() {
+                _this.caseOpt('right')
+            }, 5000)
+        },
+        caseOpt: function(o) { // case option
+            this.cases.transition = 'all 0.5s'
+            var _this = this
+            if(!this.cases.active) {
+                this.cases.active = true
+                if(o == 'left') {
+                    this.cases.index -- 
+                    this.cases.x = this.cases.index
+                    if(this.cases.index + 1 == 0) {
+                        this.cases.index = this.cases.num - 1
+                        setTimeout(function() {
+                            _this.cases.transition = 'all 0s'
+                            _this.cases.x = _this.cases.index
+                            _this.cases.active = false
+                        }, 500)
+                    }   
+                }
+                if(o == 'right') {
+                    this.cases.index ++
+                    this.cases.x = this.cases.index
+                    if(this.cases.index == this.cases.num) {
+                        this.cases.index = 0
+                        setTimeout(function() {
+                            _this.cases.transition = 'all 0s'
+                            _this.cases.x = _this.cases.index
+                            _this.cases.active = false
+                        }, 500);
+                    }
+                }
+            }
+            this.$refs['case'].children[0].addEventListener('transitionend', function() {
+                _this.cases.active = false
+            })
+        },
+        caseInd: function(i) { // case indicator
+            this.cases.transition = 'all 0.5s'
+            this.cases.index = i - 1
+            this.cases.x = this.cases.index
+        },
+        // recommend
+        close: function() {
+            this.$refs['recommend'].style.display = 'none'
+            this.$refs['tel'].style.bottom = '50px'
+        }
+    },
+    mounted: function() {
+        //carousel init
+        this.carouselInit() 
+        //product init
+        this.productInit()
+        //case init
+        this.caseInit()
+    }
+}).$mount('#app');
+</script>
+</body>
+</html>
